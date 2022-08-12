@@ -7,12 +7,11 @@ variable "aws_access_key" {}
 
 provider "aws" {
   region = var.aws_region
-  access_key = var.aws_access_key
-  secret_key = var.aws_secret_key
+  shared_credentials_file = "~/.aws/credentials"
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-    bucket = "terraform-state-jenkins-iac"
+    bucket = "terraform-state-ejm-jenkins-iac"
 
     lifecycle {
         prevent_destroy = true
