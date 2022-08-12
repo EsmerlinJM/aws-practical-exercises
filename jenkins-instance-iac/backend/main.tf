@@ -7,7 +7,7 @@ variable "aws_access_key" {}
 
 provider "aws" {
   region = var.aws_region
-  shared_credentials_file = "~/.aws/credentials"
+  shared_credentials_files = "~/.aws/credentials"
 }
 
 resource "aws_s3_bucket" "terraform_state" {
