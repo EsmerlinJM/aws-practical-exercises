@@ -100,4 +100,7 @@ terraform.rc
 # Ignore infracost
 .infracost
 
+# Ignore pluralith
+.pluralith
+
 # End of https://www.toptal.com/developers/gitignore/api/macos,terraform,visualstudiocode
