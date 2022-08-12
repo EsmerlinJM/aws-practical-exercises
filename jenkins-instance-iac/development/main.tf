@@ -5,10 +5,11 @@ variable "cidr_block" {}
 variable "private_subnets_count" {} 
 variable "public_subnets_count" {}
 variable "availability_zones" {}
+variable "public_key"{}
 
 provider "aws" { 
  	region = var.aws_region 
-    shared_credentials_files = "~/.aws/credentials"
+    shared_credentials_files = ["~/.aws/credentials"]
 }
 
 terraform { 
@@ -37,4 +38,5 @@ module "subnet_module" {
     availability_zones = var.availability_zones 
     public_subnets_count = var.public_subnets_count 
     private_subnets_count = var.private_subnets_count
+    public_key = var.public_key
 }
